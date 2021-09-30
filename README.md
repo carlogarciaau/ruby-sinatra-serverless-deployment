@@ -2,7 +2,7 @@
 This repo deploys a Ruby Sinatra app to GCP Cloud Run. 
 
 ## Pre-requisites
-+ A Google Cloud project with [billing enabled]
++ A Google Cloud project with billing enabled
 + Download Terraform cli (tested with v1.0.7 as of this writing)
 + Download and setup gcloud cli tool
   - gcloud init
