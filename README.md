@@ -39,7 +39,7 @@ This repo deploys a Ruby Sinatra app to GCP Cloud Run.
    + This will return a URL to access the deployed app
 
 6. To cleanup the environment:
-   + Run `make destroy` each under artifact_registry and service directories and repeat steps 1-4
+   + Run `make destroy` each under artifact_registry and service directories and repeat steps 1-5
 
 ## Approach, Considerations and Assumptions
 1. I chose Cloud Run as the simplest, cost-efficient, serverless solution to deploy the app in a scalable and highly available manner.
