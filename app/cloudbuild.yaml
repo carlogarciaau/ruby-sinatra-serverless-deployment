@@ -1,0 +1,19 @@
+steps:
+  - id: "build image"
+    name: "gcr.io/cloud-builders/docker"
+    args:
+      [
+        "build",
+        "-t",
+        "${_REGION}-docker.pkg.dev/${PROJECT_ID}/${_REPOSITORY_ID}/${_SERVICE_NAME}",
+        ".",
+      ]
+
+  - id: "push image"
+    name: "gcr.io/cloud-builders/docker"
+    args: ["push", "${_REGION}-docker.pkg.dev/${PROJECT_ID}/${_REPOSITORY_ID}/${_SERVICE_NAME}"]
+
+substitutions:
+  _SERVICE_NAME: hello-world
+  _REGION: <region>
+  _REPOSITORY_ID: <repository_id>
