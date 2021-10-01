@@ -6,10 +6,10 @@ test:
 	@terraform fmt -check
 	@terraform validate
 
-plan:
+plan: test
 	@terraform plan -var-file=../common.tfvars
 
-apply: test plan
+apply:
 	@terraform apply -var-file=../common.tfvars
 
 destroy:

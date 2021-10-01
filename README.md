@@ -21,6 +21,7 @@ This repo deploys a Ruby Sinatra app to GCP Cloud Run.
    ```
    cd artifact_registry
    make init
+   make plan
    make apply
    ```
 
@@ -34,6 +35,7 @@ This repo deploys a Ruby Sinatra app to GCP Cloud Run.
    ```
    cd service
    make init
+   make plan
    make apply
    ```
    + This will return a URL to access the deployed app
