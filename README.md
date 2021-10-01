@@ -17,10 +17,10 @@ This repo deploys a Ruby Sinatra app to GCP Cloud Run.
 
 2. Configure app/cloudbuild.yaml variables for region and repository_id
 
-3. Provision a private docker registry
+3. Provision a private docker registry. The makefile runs terraform `fmt -check` / `validate` / `plan` / `apply` for you. 
    ```
    cd artifact_registry
-   terraform init
+   make init
    make apply
    ```
 
@@ -30,10 +30,10 @@ This repo deploys a Ruby Sinatra app to GCP Cloud Run.
    make build
    ```
 
-5. Deploy the app to Cloud Run
+5. Deploy the app to Cloud Run. The makefile runs terraform `fmt -check` / `validate` / `plan` / `apply` for you. 
    ```
    cd service
-   terraform init
+   make init
    make apply
    ```
    + This will return a URL to access the deployed app
@@ -53,5 +53,6 @@ This repo deploys a Ruby Sinatra app to GCP Cloud Run.
 1. CI/CD pipeline for the app, and potentially include the cloud run deployment step in the automation pipeline
 2. Blue/green and canary releases
 3. Monitoring/alerting 
+4. Store state in GCS bucket
 
 ## My live endpoint currently at https://hello-world-atp4hhew6a-ts.a.run.app/hello-world

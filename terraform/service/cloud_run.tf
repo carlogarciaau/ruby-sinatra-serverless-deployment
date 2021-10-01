@@ -9,7 +9,7 @@ resource "google_cloud_run_service" "cloud_run_hello_world" {
         image = "${var.region}-docker.pkg.dev/${var.project}/${var.repository_id}/${local.service_name}"
 
         ports {
-          name = "http1"
+          name           = "http1"
           container_port = 3000
         }
       }

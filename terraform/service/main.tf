@@ -14,7 +14,7 @@ locals {
 
 # Enable Cloud Run service
 resource "google_project_service" "run" {
-  service = "run.googleapis.com"
+  service            = "run.googleapis.com"
   disable_on_destroy = false
 }
 
@@ -30,8 +30,8 @@ resource "google_project_iam_binding" "service_permissions" {
     "run.invoker", "cloudfunctions.invoker"
   ])
 
-  role       = "roles/${each.key}"
-  members    = [
+  role = "roles/${each.key}"
+  members = [
     "serviceAccount:${google_service_account.hello_world_sa.email}",
   ]
   depends_on = [google_service_account.hello_world_sa]

@@ -10,12 +10,12 @@ provider "google-beta" {
 
 # Enable cloud build service
 resource "google_project_service" "cloudbuild" {
-  service = "cloudbuild.googleapis.com"
+  service            = "cloudbuild.googleapis.com"
   disable_on_destroy = false
 }
 
 # Enable artifact registry service
 resource "google_project_service" "artifact_registry" {
-  service = "artifactregistry.googleapis.com"
+  service            = "artifactregistry.googleapis.com"
   disable_on_destroy = false
 }

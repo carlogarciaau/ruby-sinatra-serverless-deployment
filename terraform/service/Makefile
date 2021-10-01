@@ -1,8 +1,15 @@
+init:
+	@terraform init
+
+test:
+	@cd ..; terraform fmt -check
+	@terraform fmt -check
+	@terraform validate
 
 plan:
 	@terraform plan -var-file=../common.tfvars
 
-apply:
+apply: test plan
 	@terraform apply -var-file=../common.tfvars
 
 destroy:
