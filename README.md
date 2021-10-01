@@ -46,7 +46,7 @@ This repo deploys a Ruby Sinatra app to GCP Cloud Run.
 ## Approach, Considerations and Assumptions
 1. I chose Cloud Run as the simplest, cost-efficient, serverless solution to deploy the app in a scalable and highly available manner.
 2. Assumed that the app would be publicly accessible and had no dependencies
-3. Assumed that users would be mostly located from the Sydney region
+3. Assumed that users would be mostly located from GCP region specified
 3. For security, ensured that the container didn't run as root and created a non-default service account with minimal permissions to assign as the service's identity
 4. Other options:
    - Add an HTTPS load balancer for requirements like CDN, domain mapping and multi-region deployment
