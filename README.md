@@ -42,20 +42,3 @@ This repo deploys a Ruby Sinatra app to GCP Cloud Run.
 
 6. To cleanup the environment:
    + Run `make destroy` each under artifact_registry and service directories and repeat steps 1-5
-
-## Approach, Considerations and Assumptions
-1. I chose Cloud Run as the simplest, cost-efficient, serverless solution to deploy the app in a scalable and highly available manner.
-2. Assumed that the app would be publicly accessible and had no dependencies
-3. Assumed that users would be mostly located from GCP region specified
-3. For security, ensured that the container didn't run as root and created a non-default service account with minimal permissions to assign as the service's identity
-4. Other options:
-   - Add an HTTPS load balancer for requirements like CDN, domain mapping and multi-region deployment
-   - Provision a K8s cluster for more complex workloads like microservices
-
-## Further Improvements
-1. CI/CD pipeline for the app, and potentially include the cloud run deployment step in the automation pipeline
-2. Blue/green and canary releases
-3. Monitoring/alerting 
-4. Store state in GCS bucket
-
-## My live endpoint currently at https://hello-world-atp4hhew6a-ts.a.run.app/hello-world
